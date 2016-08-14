@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class blog extends Model
 {
     protected $table = 'blog' ;
-    public $incrementing = false;
 
 
+    public function User()
+    {
+        return $this->belongsTo('User');
+    }
 
 
 }

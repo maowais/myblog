@@ -17,3 +17,6 @@ Route::get('/', function () {
 $this->get('/','bblogController@index') ;
 Route::post('bblog/', 'bblogController@store');
 
+Route::group(['middlewareGroups' => ['web']], function () {
+    return view('welcome');
+});

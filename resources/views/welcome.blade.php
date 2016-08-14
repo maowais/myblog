@@ -49,6 +49,21 @@
 
           {!! csrf_field() !!}
             <?php echo csrf_field();?>
+            @if (isset($errors) && count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
+            enter ur name: <input type ="text" name="name" /><br/>
+
+            the Email must be unique </br>
+
            enter ur email: <input type ="text" name="email" /><br/>
            enter ur password : <input type ="password" name="password" /><br/><br/>
 
@@ -57,11 +72,9 @@
             </textarea> <br/>
             <button class="title" type="submit" > save </button>
 
-            <button class="title" type="submit">  preview </button>
-            <br/>
-            <textarea rows="30" cols="50">
 
-            </textarea>
+            <br/>
+
 
         </form>
         </div>
