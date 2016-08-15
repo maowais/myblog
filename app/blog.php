@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Support\Facades\DB ;
 use Illuminate\Database\Eloquent\Model;
 
 class blog extends Model
@@ -13,6 +13,8 @@ class blog extends Model
     {
         return $this->belongsTo('User');
     }
+
+
 
 
 }

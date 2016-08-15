@@ -43,34 +43,20 @@
         <div class="body">
 
 
-
-
         <form action ="/" method="POST" >
 
           {!! csrf_field() !!}
-            <?php echo csrf_field();?>
-            @if (isset($errors) && count($errors) > 0)
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
 
+            <input type="hidden" name="_method" value="PATCH"/>
 
-            enter ur name: <input type ="text" name="name" /><br/>
+            <label>title</label>
+            <input type="text" name="title" value="{{$blog->title}}" >
+            </br>
+            <label>content</label> <br/>
+            <input  name="content" value="{{$blog->content}}" >
+            <br/>
+            <button class="title" type="submit" > Edit </button>
 
-            the Email must be unique </br>
-
-           enter ur email: <input type ="text" name="email" /><br/>
-           enter ur password : <input type ="password" name="password" /><br/><br/>
-
-            Enter  the title of your Blog : <input type ="text" name="title" /><br/>
-            Enter descrption here  : <textarea rows="4" cols="50" name="content">
-            </textarea> <br/>
-            <button class="title" type="submit" > save </button>
 
 
             <br/>

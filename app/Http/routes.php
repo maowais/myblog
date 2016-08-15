@@ -14,9 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-$this->get('/','bblogController@index') ;
-Route::post('bblog/', 'bblogController@store');
+$this->get('/','ArticlesController@index') ;
 
+
+Route::post('/', 'ArticlesController@store');
+route::get('Artical/' ,'ArticlesController@show') ;
+$this->get('/','ArticlesController@index') ;
 Route::group(['middlewareGroups' => ['web']], function () {
     return view('welcome');
 });
